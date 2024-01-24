@@ -1,39 +1,36 @@
 //
 //  Prostopadloscian.swift
-//  SWIFT_klasy_lab11
+//  zad11
 //
-//  Created by admin on 1/7/24.
+//  Created by admin on 1/17/24.
 //
 
 import Foundation
 class Prostopadloscian:Prostokat
 {
-
-    var wysokosc:Double = 10.0
-    init(bokA: Double, bokB: Double, wysokosc:Double)
-    {
-        super.init(bokA: bokA, bokB: bokB)
+    var wysokosc:Double = 1.0
+    init(bokA_len: Double, bokB_len: Double, wysokosc:Double) {
+        super.init(bokA_len: bokA_len, bokB_len: bokB_len)
         self.wysokosc = wysokosc
     }
-    
-    func poleBryly()->Double{
-        let pole = 2*(bokA*bokB) + 2*(wysokosc*bokA) + 2*(wysokosc*bokB)
-        return pole
+    func poleCalkowite()->Double
+    {
+        return 2*(bokA_len*bokB_len)+2*(bokA_len*wysokosc) + 2*(bokB_len*wysokosc)
     }
-    func sumaKrawedzi()->Double{
-        let sumaK = 4*bokA + 4*bokB + 4*wysokosc
-        return sumaK
+    func sumaKrawedzi()->Double
+    {
+        return 4*wysokosc+4*bokA_len+4*bokB_len
     }
-    
-    func objetoscBryly()->Double{
-        let objetosc = bokA*bokB*wysokosc
-        return objetosc
+    func objetosc()->Double
+    {
+        return bokA_len*bokB_len*wysokosc
     }
     override func wyswietl() {
         super.wyswietl()
-        print("Wysokosc: \(wysokosc)")
-        print("Calkowite pole powierzchni: \(poleBryly())")
-        print("Suma krawedzi \(sumaKrawedzi())")
-        print("Objetosc: \(objetoscBryly())")
+        print("Wysokosc bryly: \(wysokosc)")
+        print("Pole calkowite bryly: \(poleCalkowite())")
+        print("Suma krawedzi bryly: \(sumaKrawedzi())")
+        print("Objetosc bryly: \(objetosc())")
+        
     }
 }
