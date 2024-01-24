@@ -1,28 +1,30 @@
 //
 //  Osoba.swift
-//  SWIFT_klasy_lab11
+//  zad11
 //
-//  Created by admin on 1/7/24.
+//  Created by admin on 1/17/24.
 //
 
 import Foundation
-
 class Osoba
 {
-    var imie: String = ""
-    var nazwisko: String = ""
-    var rok_urodzenia: Int = 1999
-    
-    init(imie: String, nazwisko:String, rok_urodzenia:Int)
-    {
+    var imie: String
+    var nazwisko: String
+    var rokUrodzenia: Int
+    init(imie:String, nazwisko:String, rokUrodzenia: Int) {
         self.imie = imie
         self.nazwisko = nazwisko
-        self.rok_urodzenia = rok_urodzenia
+        self.rokUrodzenia = rokUrodzenia
+    }
+    func wiekOsoby()->Int
+    {
+        return 2024-rokUrodzenia
     }
     func wyswietl()
     {
         print("Imie: \(imie)")
         print("Nazwisko: \(nazwisko)")
-        print("Rok urodzenia: \(rok_urodzenia)")
+        print("Rok urodzenia: \(rokUrodzenia)")
+        print("Wiek \(wiekOsoby())")
     }
 }
